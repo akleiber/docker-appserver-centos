@@ -41,7 +41,7 @@ RUN /opt/appserver/bin/php -r "readfile('https://getcomposer.org/installer');" \
 # install supervisor, the system that makes sure appserver processes are running
 RUN yum install -y supervisor
 RUN mkdir -p /var/log/supervisor
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stderr /opt/appserver/var/log/php_errors.log
